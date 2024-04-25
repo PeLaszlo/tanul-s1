@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feladat 1</title>
+    <style>
+        div {
+            display: flex;
+            background-color: darkgrey;
+            width: 70%;
+            margin: 10px auto 10px auto;
+            justify-content: space-around;
+            ;
+
+        }
+        div div {
+            background-color: blue;
+            color: aliceblue;
+            margin: 10px;
+            width: 50px;
+            flex-grow: 1;
+        }
+        p {margin-left: auto;
+        margin-right: auto;
+        }
+        .big {
+                flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div class="big"><p>3</p></div>
+        <div><p>4</p></div>
+    </div>
+</body>
+</html>
