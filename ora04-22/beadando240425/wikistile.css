@@ -75,15 +75,15 @@ text-align: center;
 .leftside ul ul {
     display: none;
 }
-table, tr, td,th {
+.maintext article table,.maintext article tr,.maintext article td, .maintext article th {
     border: 2px solid black;
     border-collapse: collapse;
 }
-th,td:first-child {
+.maintext article th,.maintext article td:first-child {
     background-color:lightgrey;
 }
-td {width: 200px;}
-table {margin:10px 10px 20px 0px;}
+.maintext article td {width: 200px;}
+.maintext article table {margin:10px 10px 20px 0px;}
 #landingplace {
     
     width: fit-content;
@@ -160,8 +160,16 @@ margin-right: 20px;}
 .rightside h2 { background-color: skyblue;}
 .rightside h3 {background-color:skyblue;}
 .rightside h4 {background-color:aqua;}
-
+.rightside table tr td img {
+    width: 20px;
+    height: 20px;
+}
+.rightside td {
+    margin: 10px;
+    width: 45%;
+}
 .flow {display: flex;}
 .innerhead {display: block;}
+
 
 
