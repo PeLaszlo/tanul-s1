@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06.26 óra</title>
+</head>
+<body>
+    <script>
+        const students = [
+    { name: "Bill", age: 17, grade: 5 },
+    { name: "Jane", age: 17, grade: 4 },
+    { name: "Martha", age: 18, grade: 3 },
+    { name: "Bob", age: 17, grade: 5 },
+    { name: "John", age: 19, grade: 2 },
+    { name: "Jane", age: 17, grade: 4 },
+    { name: "Jill", age: 19, grade: 5 },
+    ];
+    
+    const grade5studens=students.filter((item)=>item.grade==5);
+    console.log(grade5studens);
+
+    // 2 feladat
+
+    const expandedStudents=[];
+    function insert(item)
+    {
+        const student={...item};
+        if (item.grade==5)
+        {
+            student.isValedictorian=true;
+        }
+        else 
+        {
+            student.isValedictorian=false;
+        }
+        expandedStudents.push(student);
+    }
+    students.forEach(insert);
+    console.log(expandedStudents);
+
+    // 3 feladat
+    const avgGrade=students.filter((item) => item.age>=18).
+    reduce((sum,item,_,arr)=>{
+        sum=sum*arr.length+item.grade; 
+        sum/=arr.length;
+        return sum;},0);
+    console.log(avgGrade);
+
+    //  4.feladat
+
+    let poreStudents=[];
+  students.forEach((student) =>{
+    let found=false;
+    for (const student2 of poreStudents) {
+       if (student2.name==student.name) {found=true;}
+    }
+    if (!found) poreStudents.push(student);
+  })
+
+    console.log(poreStudents);
+
+    // 5. felad
+    
+  console.log(students.some((student) => (student.age<18 && student.grade<4) ));
+
+  // 6 feladat
+  const names=poreStudents.map((student)=> student.name);
+  console.log(names);
+
+    </script>
+</body>
+</html>

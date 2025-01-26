@@ -1,0 +1,22 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+li { 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
+    
+    gap:10px;
+}
+ 
+.delete-btn {
+    border-radius: 10px 20px 20px 10px;
+}
+.green {background-color: greenyellow;}
+.dark {background-color: lightgray;}

@@ -1,0 +1,22 @@
+{
+  "name": "node10",
+  "version": "1.0.0",
+  "main": "projekt.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch projekt.js",
+    "seed": "node seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}

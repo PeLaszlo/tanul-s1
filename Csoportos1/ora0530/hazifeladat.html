@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Házi feladat</title>
+</head>
+<body>
+    <script>
+        //1. feladat 
+        const animals1 = [
+            animal={
+                name:"ló",
+                age:8,
+            },
+            animal= {name: "veréb", age:3},
+            animal ={name:"Macska", age:12},
+        ]
+            console.log(animals1);
+            const addanimal={age:6, name:"kutya",};
+            animals1.push(addanimal);
+            if(animals1[animals1.length-1].age>5  ) {
+                console.log("az állat neve: ",animals1[animals1.length-1].name,"életkora: ",animals1[animals1.length-1].age)
+            }
+        // 2. feladat
+        const animals2 =[
+            animal={name:"Gedeon",spice:"lúd"},
+            animal={name: "cirmos", spice:"macska"}
+        ]
+        animals2.push(animal={name:"Bodri",spice:"kutya"});
+        console.log(animals2);
+        if(animals2[2].spice=="kutya") {console.log(animals2[2].name);}
+        // 3. feladat
+        const animals3 =[
+             {
+                name:"bodri",
+                age:5,
+                spice:"kutya",
+            },
+            {
+                name:"Márton",
+                age:1,
+                spice:"lúd",
+            },
+            {
+                name:"szürke",
+                age:12,
+                spice:"macska",
+            },
+            {
+                name:"foltos",
+                age:4,
+                spice:"macska",
+            },
+            {
+                name:"Tigris",
+                age:6,
+                spice:"kutya",
+            }
+        ]
+        console.log(animals3);
+        for( let i=0;i<animals3.length;i++) {
+            if (animals3[i].spice=="macska") {
+                console.log("A macska neve: ",animals3[i].name,"életkora: ",animals3[i].age);
+            }
+        }
+    </script>
+</body>
+</html>

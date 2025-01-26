@@ -1,0 +1,47 @@
+.optionclass{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.qustionblock {
+    border: 1px solid gray;
+    padding:15px;
+}
+.footerbox {
+ display: flex;
+ justify-content: space-between;
+ padding: 10px;
+ border: 1px solid gray;
+ background-color: lightgrey;
+}
+.opttionbtn{
+    border-radius: 10px;
+}
+.optionbtn:hover {
+    background-color: lightgreen;
+}
+.red {background-color:red;}
+.green {background-color: lightgreen;}
+.blue {background-color: lightskyblue;}
+.footerbtn{
+    padding: 5px;
+    border-radius: 5px;
+}
+      
+
+.progress
+{
+    width: 100%;
+    height: 35px;
+    background-color: blue;
+}
+
+.header {
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+.resultColor {
+    
+}

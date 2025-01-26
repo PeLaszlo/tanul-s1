@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. feladat</title>
+</head>
+<body>
+    <script>
+        const name=prompt("kérem a diák nevét:");
+        const point1=Number(prompt("1. dolgozat pontszáma:"));
+        const point2=Number(prompt("2. dolgozat pontszáma:"));
+        const point3=Number(prompt("3. dolgozat pontszáma:"));
+        if (isNaN(point1) || isNaN(point2) || isNaN(point3)) {
+            alert("valamelyik pontszám nem számérték.");
+        }
+        else {
+            let error=false;
+            if (point1<0 || point1 >100) {alert("1. dolgozat pontsáma hibás"); error=true;}
+            if (point2<0 || point2 >100) {alert("2. dolgozat pontsáma hibás"); error=true;} 
+            if (point3<0 || point3 >100) {alert("3. dolgozat pontsáma hibás"); error=true;} 
+            const averge=(point1+point3+point2)/3;
+            if (!error) {
+                if (averge>=90) {
+                    alert(name+" érdemegye: A");
+                }
+                else if (averge>=80) {
+                    alert(name+" érdemegye. B");
+                }
+                else if (averge>=70) {
+                    alert(name+" érdemegye: C");
+                }
+                else if (averge>=60) {
+                    alert(name+" érdemegye. D");
+                }
+                else if (averge>=50) {
+                    alert(name+" érdemegye E");
+                }
+                else {alert(name+"Az érdemjegye: F");}
+            }
+        }
+    </script>
+</body>
+</html>

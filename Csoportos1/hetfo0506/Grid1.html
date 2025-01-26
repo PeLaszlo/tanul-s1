@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 1</title>
+    <style>
+        :root {--zold:rgb(0,200,0);}
+        main {
+           
+            display: grid; 
+           grid-template-columns: 1fr 1fr 1fr;
+           grid-template-rows: 1fr 1fr 1fr;
+           gap:10px;
+        }
+        div {
+            background-color: var(--zold);
+            border:1px solid darkolivegreen;
+            text-align: center;
+            color:darkolivegreen;
+        }
+        main div:nth-child(4)
+        {
+            grid-column: span 3;
+        }
+        main div:last-child {
+            grid-column: 2/4;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            Alma
+        </div>
+        <div>Körte</div>
+        <div>Megy</div>
+        <div>Barack</div>
+        <div>szilva</div>
+    </main>
+</body>
+</html>

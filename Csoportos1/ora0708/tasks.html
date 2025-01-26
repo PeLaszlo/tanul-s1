@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise-os feladatok</title>
+</head>
+<body>
+<script>
+    const promise1= new Promise((resolve)=> 
+        setTimeout(()=> resolve("letelt a 2 másodperc"),2000));
+    promise1.then ((text)=>console.log(text));
+
+    const promise2= new Promise((resolve,reject) => {
+        setTimeout(()=>{
+            const rand=Math.random();
+            if (rand>0.5) resolve(("siker "+rand));
+            else reject(("kudarc "+rand));
+        },3000);
+    });
+    promise2.then((text)=>console.log(text)).catch((text)=>console.log(text));
+</script>
+    
+</body>
+</html>

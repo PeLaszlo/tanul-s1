@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasks</title>
+</head>
+<body>
+    <script>
+        function bonus(name,salary,array) {
+            let bonValue=salary*0.1;
+            array.push({name:name,bonValue} );
+        }
+        const employee=[];
+        bonus("karcsi",230000,employee);
+        bonus("józska",570000,employee);
+        bonus("imre",2789000,employee);
+        console.log(employee);
+        // feladat 2
+        const dailytemp=[[23,24,24,18],[14,16,18,15,13],[10,14,16,15,10],[7,-3,-7-4]];
+        const avgtemp=[];
+        for (let i=0;i<dailytemp.length;i++)
+            {
+                let avg=0;
+                for(j=0;j<dailytemp[i].length;j++)
+                {
+                    avg+=dailytemp[i][j];
+                }
+                avgtemp.push(avg);
+            }
+            console.log(avgtemp);
+            // 
+            const text="Ez egy próba szöveg a szavak szálmlálására. Szavak ismétlődhetnek. a b ";
+            const textarray=[];
+            textarray=text.to
+    </script>
+</body>
+</html>

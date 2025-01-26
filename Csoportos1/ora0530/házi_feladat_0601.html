@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript házi feladat 3</title>
+</head>
+<body>
+    <script>
+        // 1. feladat
+        const fibonacci=[0,1];
+        for( let i=2;i< 10; i++ ) {
+            fibonacci.push(fibonacci[i-1]+fibonacci[i-2]);
+        }
+        console.log(fibonacci);
+
+        // 2.feladat
+        console.log(" ---------- 2. feladt -------------");
+        const notes=[
+            {title:"Ez az első cím",
+                contend:"tartolom1",
+                important:false,
+            },
+            {title:"Ez az második cím",
+                contend:"tartolom2",
+                important:false,
+            }, 
+            {title:"Ez az is cím3",
+                contend:"tartolom3",
+                important:true,
+            },
+            {title:"Ez a sokadik cím",
+                contend:"tartolom4",
+                important:true,
+            },          
+        ]
+        for(let i=0; i<notes.length;i++) {
+            if(notes[i].important) {
+                console.log(notes[i].title,":",notes[i].contend);
+            }
+        }
+        // 3. feladat 
+        console.log("---------- 3. feladat ------------");
+        const numbers=[2,4,8,7,3,4,9,8,7,1,0,-8,-9,45]
+        let find;
+        do {
+            find=Number(prompt("kérem adja meg a keresett számot: "));
+            if (isNaN(find)) {alert("Ez nem szám!");}           
+        } while (isNaN(find));
+        if(numbers.indexOf(find)==-1) {console.log("A szám nem található az adott tömben");}
+        else console.log("A keresett szám a ",numbers.indexOf(find),". indexű elemben található meg először");
+        // 4 feladat
+        console.log("---------- 4. feladat ------------");
+        const books=[
+            {
+                title:"A könyezés",
+                Author: "Joe Doe",
+                year: 1999,
+                status: "returned"
+            },
+            {
+                title:"A sírés",
+                Author: "Joe bigott",
+                year: 2005,
+                status: "borrowed"
+            },
+            {
+                title:"Versek",
+                Author: "Ady endre",
+                year: 1979,
+                status: "returned"
+            },
+            {
+                title:"Matematika",
+                Author: "john Gauss",
+                year: 2010,
+                status: "borrowed"
+            },
+            {
+                title:"Relatív Fizika",
+                Author: "Albert Eisten",
+                year: 1967,
+                status: "returned"
+            } 
+        ]
+        let book2= books.slice(0,3);
+        console.log(book2);
+        books.splice(books.length/2,1,{title:"Új könyv",
+                Author: "Edina Carter",
+                year: 2013,
+                status: "returned"});
+        console.log(books);
+        const books3 =[
+        {
+                title:"Matematika 2",
+                Author: "john Gauss",
+                year: 2011,
+                status: "borrowed"
+            },
+            {
+                title:"Relatív Fizika II",
+                Author: "albert Eisten",
+                year: 1977,
+                status: "returned"
+            } 
+        ]
+            let books4=books.concat(books3);
+            console .log("Az összefűzött tömb.");
+            console.log(books4);
+            let bookindex=-1;
+            const search1=prompt("kérem a keresett címet");
+            for(let i=0; i<books.length;i++) {
+                if (books[i].title==search1) {bookindex=i}
+            }
+
+            if (bookindex!=-1) {console.log("A keresett könyv indexe: ",bookindex);}
+            else {console.log("Akeresett könyv nem találtható.");}
+            for(let i=0; i<books.length;i++) {
+                console.log("könyv: ",books[i].title, books[i].status);
+            }
+            console.log("A visszahozott könyvek.");
+            let emty=true;
+            for(let i=0; i<books.length;i++) {
+                if(books[i].status!="returned") {
+                    emty=false;
+                    console.log(books[i].title," nincs visszahozva.");
+                }
+            }
+            if(emty) {console.log("Minden könyvet visszahoztak.");}
+            let oldest=books[0]
+            for(let i=1; i<books.length;i++) {
+                if(books[i].year<oldest.year) {
+                    oldest=books[i];
+                }
+            }
+            console.log("legrégebbi könyv. ",oldest.title, oldest.year);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. feladat</title>
+</head>
+<body>
+    <script>
+        const numbers = [10, -4, 8, 7, 12, -3, 11, 11, 7, -1];
+        let summa=0;
+        for(let i=0;i<numbers.length; i++){
+            summa+=numbers[i];
+        }
+        console.log("az összeadás eredménye: ",summa);
+        let maxnumber=numbers[0];
+        for(let i=0; i<numbers.length; i++) {
+            if (numbers[i]>maxnumber) {maxnumber=numbers[i];}
+        }
+        console.log("A maximális elem: ",maxnumber);
+        let minnumber=numbers[0];
+        for(let i=0; i<numbers.length; i++) {
+            if (numbers[i]<minnumber) {minnumber=numbers[i];}
+        }
+        console.log("A minimális elem: ",minnumber);
+        let averge=0;
+        for(let i=0; i<numbers.length;i++) {
+            averge+=numbers[i];
+        }
+        averge=averge/numbers.length;
+        console.log("a tömb átlaga: ",averge);
+        let addarray=[];
+        for(let i=0; i<numbers.length;i++) {
+            if(numbers[i]%2==0) {
+                addarray.push(numbers[i]);
+            }
+        }
+        console.log("Párostömb: ",addarray);
+        let odarray=[];
+        for(let i=0; i<numbers.length;i++) {
+            if(numbers[i]%2==1) {
+                odarray.push(numbers[i]);
+            }
+        }
+        console.log("Páratlan tömb: ",odarray);
+    </script>
+</body>
+</html>

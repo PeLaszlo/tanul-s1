@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. feladat</title>
+    <style>
+        body {background-color:blueviolet}
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items:center;
+            justify-items: flex-start;
+            gap: 10px;
+            
+        }
+        .card {
+            background-color: whitesmoke;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            padding: 10px 5px 20px 5px;
+            border: 2px solid darkolivegreen;
+            border-radius: 10px;
+        }
+        h3,h4{
+            margin: 0px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        .list-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .listelem {
+            text-align: center;
+            font-weight: bold;
+        }
+        .follow-btn {
+            border: 1px solid black;
+            border-radius: 5% 5%;
+            background-color:blueviolet;
+            color: aliceblue;
+            margin-top: 20px;
+            width: 70%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src="users.js"></script>
+</head>
+<body>
+    
+    <main>
+    
+    </main>
+    <script>
+    users.forEach((card,index) => {
+         const elem=document.createElement("div");
+         let cont='<img src="'+card.profileUrl+'" alt="random">';
+         cont+='<h3>'+card.name+'</h3>';
+         cont+='<h4>'+card.profession+'</h4>';
+         cont+="<p>"+card.description+"</p>";
+         cont+='<div class="list-container"><div class="listelem"> Phottos: <br>'+card.photos+'</div>'
+         +'<div class="listelem"> Likes: <br>'+card.likes+'</div>'+
+         '<div class="listelem"> Follers: <br>'+card.folowers+'</div>'
+         +'</div>';
+         cont+='<button type="button" class="follow-btn" onclick="setdark(event)"';
+         cont+= 'id="'+index+'"">Follow</button>';
+         
+         elem.innerHTML=cont;
+
+        const classitem= elem.classList;
+        classitem.add("card");
+         document.body.getElementsByTagName("main")[0].appendChild(elem);
+
+        });
+        function setdark(event)
+        {   
+        const btn=document.getElementById(event.target.id);
+            btn.setAttribute("disabled","disabled");
+            btn.style.backgroundColor="darkgray";
+            btn.style.color="gray";
+            
+        
+        }
+    </script>
+</body>
+</html>

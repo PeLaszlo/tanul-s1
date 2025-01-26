@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. feladat</title>
+</head>
+<style>
+    main, div {margin: 200px auto auto auto;}
+    div {
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        padding-top: 10px;
+        align-content: center;
+    }
+    main {text-align: center;
+    }
+</style>
+<body>
+<main>
+    <div id="showcolor"></div>
+    <br>
+    <button onclick="changeColor()">színváltás</button>
+</main>
+<script>
+    document.getElementById("showcolor").textContent="#00ffff";
+    document.body.style.backgroundColor="#00ffff";
+    console.log(teszt);
+    function changeColor() 
+    {
+        let color=Math.floor(Math.random() * 16777215).toString(16);
+        console.log(color);
+        document.body.style.backgroundColor="#"+color;
+        document.getElementById("showcolor").textContent=color;
+        
+    }
+
+</script>
+</body>
+</html>

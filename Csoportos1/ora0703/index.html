@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event kezelés</title>
+</head>
+<body>
+    <button onclick="hide()">eltűntett</button>
+      
+    <div id="task1">Ez egy tetszöleges szöveg.</div>
+    <br><br>
+    <button id="task2" onclick="hidebutton()">öneltöntető gomb</button>
+    <script>
+        function hide()
+        {
+            const div1=document.getElementById("task1");
+            
+            div1.style.display="none";
+        }
+        function hidebutton() 
+        {
+            const but1=document.getElementById("task2");
+            
+            but1.style.display="none";
+        }
+
+    </script>
+</body>
+</html>

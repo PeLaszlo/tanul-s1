@@ -1,0 +1,12 @@
+{
+  "todo": [
+    {
+      "id": 0,
+      "text": "saját Json0",
+      "status": "notready"
+    },
+    {
+      "id": 1
+    }
+  ]
+}

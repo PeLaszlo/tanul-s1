@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>házi feladat</title>
+</head>
+<body>
+    <script>
+        // 1.feladat
+        function powing(number,exponent=2) {
+            return number**exponent;
+        }
+        console.log("hatványozás: 5 a 3. on= ",powing(5,3));
+        // 2. feladat
+        function fibonacci(number) {
+            if (number>0) {
+               let fibonacciarray=[0];
+               if (number<2) return;
+               fibonacciarray.push(1);
+               for(let i=2;i<number;i++) {
+                    fibonacciarray.push(fibonacciarray[i-2]+fibonacciarray[i-1]);
+               }
+               return fibonacciarray;
+            }
+            return false;
+        }
+        console.log("Fibonacci: ",fibonacci(12));
+
+        // 3. feladat
+        function isprim(array1,elem){
+            let prim=true;
+            let i=0;
+            while(prim && i<array1.length) {
+                if (elem%array1[i]==0) {prim=false;}
+                i++;
+            }
+            return prim;
+        }
+        function primtable(number) {
+            const array2=[];
+            if (number>1) {
+                array2.push(2);
+                let j=3;
+                while(j<=number) {
+                    if(isprim(array2,j)) {array2.push(j);}
+                j+=2;
+                }
+            }
+            return array2;
+        }
+        console.log("prim számok táblázata: ",primtable(20));
+        // 4. feladat
+
+        function mostFrekvencyElement(array1) {
+            let pieces=[];
+            for(i=0;i<array1.length;i++) {
+                pieces.push(0);
+            }
+            for(i=0;i<array1.length;i++) {
+                for(j=0;j<array1.length;j++) {
+                    if(array1[i]==array1[j]) {pieces[i]++;}
+                }
+            }
+            let maxnumber=pieces[0];
+            let index=0;
+            for (i=0;i<pieces.length;i++){
+                if (pieces[i]>maxnumber) {
+                    maxnumber=pieces[i];
+                    index=i;
+                }
+            }
+            return array1[index];
+        }
+        console.log("A leggyakoribb elem a tömben: ",mostFrekvencyElement([10,1,7,8,5,7,5,3,2,7]));
+
+        function transpon(array1) {
+            const array2=[];
+            for(let i=0;i<array1[0].length;i++) {
+                let array3=[];
+                for(j=0;j<array1.length;j++) {
+                    array3.push(array1[j][i]);
+                }
+                array2.push(array3);
+            }
+            return array2;
+        } 
+       console.log("transzponált tömb: ", transpon([[1,2,3],[4,5,6],[7,8,9]]));
+    </script>
+</body>
+</html>

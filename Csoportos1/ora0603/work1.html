@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>órai munka</title>
+</head>
+<body>
+    <script>
+        const sentences=["Ez az első mondat.", "ez meg a második","legyen ez a harmadik", "esetleg ez a negyedik"];
+        const findword= prompt("Kérem a keresett szót:");
+        let isfind=false;
+        for (let i=0 ; i<sentences.length; i++) {
+            if (sentences[i].indexOf(findword)!=-1) {
+                console.log(sentences[i]);
+                isfind=true;
+            }
+        }
+        if (!isfind) {console.log("A keresett szó nincs benne az egyik mondatban sem")}
+        // 2. feladat
+        const urladdress=prompt("kérem az URL-r");
+       
+        if((urladdress.startsWith("http://")|| urladdress.startsWith("https://"))
+        && (urladdress.endsWith(".hu") || urladdress.endsWith(".com"))
+    ) 
+        {console.log("ez egy url");
+    }
+    else {console.log("ez nem url");}
+    // 3. feladat
+    const firstword=prompt("kérem az első szót:");
+    const secondword=prompt("Kérem a második számot:");
+    let anagramma=true;
+    for(let i=0;i<firstword.length;i++) {
+        if(secondword.indexOf(firstword[i])==-1) {conanagramma=false;}
+        else {
+            
+        }
+    }
+    if (anagramma) {console.log("a két szó Anagramma");}
+    else {console.log("Nem anagramma");}
+
+    </script>
+</body>
+</html>

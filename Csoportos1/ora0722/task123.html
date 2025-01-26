@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1,2,3 feladatok</title>
+
+</head>
+<body>
+    <script>
+        const input=prompt("kérem a számot:");
+        const answer=[];
+        for(i=0;i<input.length;i++)
+        {
+            const char=input[i];
+            const number=Number(char);
+            if(isNaN(number)) {console.log("nem számot ksaptsm"); break;}
+            answer.push(number);
+            if (number%2==0 && i<input.length-1) answer.push("-");
+        }
+        const text=answer.join("");
+        console.log("Az 1. feladat megoldása:");
+        console.log("output: ",text);
+
+        function squreSum(array)
+        {
+            if (!array.length) {console.log("Ez nem tömb!");return;}
+            const newarr=array.map((item)=>Math.pow(item,2));
+            console.log("A tömb számainak összege:",newarr.reduce((sum,item)=>sum+item));
+        }
+        console.log("2. feladat megoldása:");  
+        squreSum([1,1,1,]);
+        console.log("3. feladat megoldása");
+
+        function pozitivSum(array)
+        {
+            if (!array.length) {console.log("Ez nem tömb!");return;}
+            console.log("pozítiv számok összege a tömbben");
+            console.log(array.filter((item)=>item>0).reduce((sum,elem)=>sum+elem));
+        }
+        pozitivSum([1,-1,2]);
+
+        function monogram(name)
+        {
+            const namearr=name.split(" ");
+            const monoarr=namearr.map((item)=>item[0].toUpperCase());
+            const text=monoarr.join("");
+           // console.log(" név monogramja:",text);
+            return text;
+        }
+        console.log( monogram("kiss pista jános-imre"));
+
+        const input1 = [
+    {
+        name: "Tibi",
+        age: 13,
+    },
+    {
+        name: "Feri",
+        age: 56,
+    },
+    {
+        name: "Juli",
+        age: 45,
+    },
+    {
+        name: "Margit",
+        age: 67,
+    },
+];
+
+
+function ageCalculator(inp)
+{
+    const minAge=inp.reduce((min,data)=>data.age<min? data.age:min,inp[0].age);
+    const maxAge=inp.reduce((max,data)=>data.age>max? data.age:max,inp[0].age);
+    return [minAge,maxAge,maxAge-minAge];
+}
+console.log(ageCalculator(input1));
+
+const decreaseWords =((text)=>
+   text.split(" ")
+    .map((word)=>word.length>4 ? newword=word[0]+(word.length-2)+word[word.length-1]
+         :newword=word)
+         .join(" ")
+);
+
+ console.log(decreaseWords("Ez egy ilyen elkelkáposztásított mondat"));
+    </script>
+</body>
+</html>

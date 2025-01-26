@@ -1,0 +1,36 @@
+
+
+.hederelement {
+    margin-left: 10px;
+    color:white
+}
+
+.headernav {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+.search-btn {
+    background-color:lightgreen;
+    color:white;
+}
+.addtext{
+    width: 74.9%;
+    font-size: 30px;
+    height: 35px;
+    margin:5px;
+}
+
+.cardContainer {
+    display: flex;
+    gap:20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.card {
+    border: 1px solid black;
+    border-radius: 5%;
+    text-align: center;
+    padding: 10px;
+}

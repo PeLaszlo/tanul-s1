@@ -1,0 +1,17 @@
+React puska
+
+createbrowserRouter, RouterProvider
+
+const változó= createBrowserRouter (kis c-vel)
+ez ehy tömb lesz ahol a children altömben leszmek az elemek. 
+
+<RouterPrivider router={változó}/> return után
+create-ben van az utvonal Path és element 
+
+Outlet-ben kerül a tartalom. az adott oldal részére
+UseLocation
+Const {pathname}=UseLocation objektum pathLocation kulcs alatti eleme.  (pathmane kisbetűvégig)
+
+route-ban vagy a createbrowserRouter-ben path:param/:adat
+UseParams-mal lehet kíveni
+const {adat}=useParams

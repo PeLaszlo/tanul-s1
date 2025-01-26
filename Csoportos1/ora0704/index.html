@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feladatok</title>
+    <style>
+        main {
+            text-align: center;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid gray;
+            padding: 30px;
+            width: 200px;
+
+        }
+        div {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="counter">0</div>
+        <button onclick="minusCount()">Decrement</button>
+        &nbsp;
+        <button onclick="plusCount()">Increment</button>
+    </main>
+    <script>
+        function plusCount() {
+            const elem=document.getElementById("counter");
+            let numb=Number(elem.textContent);
+            numb++;
+            elem.textContent=numb;
+        }
+        function minusCount() {
+            const elem=document.getElementById("counter");
+            let numb=Number(elem.textContent);
+            numb--;
+            elem.textContent=numb;
+        }
+
+    </script>
+</body>
+</html>

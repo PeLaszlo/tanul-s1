@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciklus gyakorlás</title>
+</head>
+<body>
+    <script>
+        for(let i=1;i<=20;i++) {
+            console.log("Egész számok: ",i);
+        }
+        for(let i=20;i>=1;i--) {
+            console.log("Egész számok vissza: ",i);
+        }
+        for(let i=2;i<=20;i+=2){
+            console.log("Páros számok: ",i);
+        }
+        for(let i=1;i<=20;i+=2){
+            console.log("Páratlan számok: ",i);
+        }
+        
+        let back=false;
+        let j=10;
+        while(j<=10 || !back ){
+            console.log("1-10-ig majd vissza: ",j);
+            if (back) {j++;}
+            else {j--}
+            if(j==0) {back=true;}
+        }
+        let numarray=[];
+        for(let i=1;i<=20;i++){
+            numarray.push(i);
+        }
+        console.log(numarray);
+        for (let i=0; i<numarray.length;i++) {
+            console.log(numarray[i],",");
+        }
+    </script>
+</body>
+</html>

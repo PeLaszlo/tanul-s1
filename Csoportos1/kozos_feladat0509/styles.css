@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo1 {
+    width: 100px;
+    height: 100px;
+    ;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.icons a {
+    margin-left: 20px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: column;
+    
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+    background-color: rgb(30, 146, 30);
+    text-align: center;
+    margin: 10px;
+}
+.dobozok {
+  border: black 1px solid;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgba(99, 97, 97, 0.541);
+  background-color: rgba(143, 243, 143, 0.731)
+ 
+  
+  
+}
+.dobozok .product:hover {
+  transform: scale(1.08);
+}
+
+.product img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: rgb(30, 146, 30);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header_up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(30, 146, 30);
+    
+  }
+  .header_down {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: white;
+   border: 1px solid rgb(30, 146, 30);
+   background-color: rgb(30, 146, 30);
+  }
+  .header_down img {
+    height: 100px;
+    width: auto;
+   
+  }
+  .header_down img:hover {
+    scale: 1.4;
+  }
+
+  .header_down nav {
+    padding: 20px;
+  }
+  .header_down nav a {
+    padding: 5px;
+    text-decoration: none;
+  }
+  
+  .contact {
+    padding: 15px;
+  }
+  
+  .logos img {
+    padding-right: 15px;
+    padding-left: 3px;
+    height: 30px;
+  }
+  td:first-child {
+    border-right: 1px black solid;
+    padding-right: 10px;
+  }
+  td:last-child {
+    padding-left: 10px;
+  }
+  header {
+    height: 200px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  section h1 {
+    text-align: center;
+  }
+ 

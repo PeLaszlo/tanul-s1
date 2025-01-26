@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        Library
+        <input id="author-search-input" type="text" />
+        <button id="author-search-btn">Search</button>
+        <div id="results"></div>
+
+        <script>
+            document
+                .getElementById("author-search-btn")
+                .addEventListener("click", () => {
+                    const authorName = document.getElementById(
+                        "author-search-input"
+                    ).value;
+
+                    fetch(
+                        `https://openlibrary.org/search/authors.json?q=${authorName}`
+                    )
+                        .then((response) => response.json())
+                        .then((data) => {
+                            const resultsDiv =
+                                document.getElementById("results");
+                            resultsDiv.innerHTML = "";
+
+                            data.docs.forEach((author) => {
+                                const img = document.createElement("img");
+                                img.src = `https://covers.openlibrary.org/a/olid/${author.key}-M.jpg`;
+
+                                const dataList = document.createElement("ul");
+                                dataList.style.listStyleType = "none";
+
+                                const nameListItem =
+                                    document.createElement("li");
+                                nameListItem.textContent = author.name;
+
+                                const birthDateListItem =
+                                    document.createElement("li");
+                                birthDateListItem.textContent =
+                                    author.birth_date;
+
+                                dataList.append(
+                                    nameListItem,
+                                    birthDateListItem
+                                );
+
+                                resultsDiv.append(img, dataList);
+                            });
+                        });
+                });
+                
+        </script>
+    </body>
+</html>

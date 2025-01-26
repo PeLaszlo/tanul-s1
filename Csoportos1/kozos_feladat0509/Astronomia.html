@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>astronómia</title>
+    
+     <style>
+        body {
+            background-color: lightcyan;
+        }
+        main h1 {text-align: center;
+            color: azure;
+        }
+      
+        aside {
+        
+        color: gray;
+        padding: 0px 20px 0px 20px;
+        float: left;
+        position: sticky;
+        top: 40px;
+        }
+        main section {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            gap:25px;
+            background-image: url("csillagos_eg.jpg");
+            padding-bottom: 20px;
+        }
+        main section a article img {
+            width: 60px;
+            height: 60px;
+            float: left;
+            margin: 0px 20px 5px 10px;
+            border-radius: 50%;
+           
+        } 
+        
+        main section a article {
+            background-color: aqua;
+            border: 2px solid gray;
+            border-radius: 10px;
+            box-shadow: 20px 20px rgba(0, 0, 0, 0.658);
+            width: 94%;
+            margin:0 auto 0 auto;
+            padding-bottom: 13px;
+            
+        }
+        main section a article h3 {
+             text-align: center;
+        }
+        aside ul{
+            padding-left: 5px;
+        }
+        aside ul li {
+            padding: 5px 0px 0px 0px;
+        }
+        aside ul li a {
+            text-decoration: none;
+        }
+
+        main section a article:hover {
+            scale: 1.02;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="company_logo.png" alt="Cég logója">
+            <a href="mailto:info@example.com">info@example.com</a>
+        </div>
+        <div class="icons">
+            <a href="#"><img src="login_icon.png" alt="Bejelentkezés"></a>
+            <a href="#"><img src="cart_icon.png" alt="Kosár"></a>
+        </div>
+    </header>
+
+    <aside>
+        <h2>Tartalomjegyzék</h2>
+        <ul>
+            <li><a href="#m607">Lencsés távcsővek</a></li>
+            <li>Tükrős távcsővek</li>
+            <ul>
+                <li><a href="#e130">Newton távcsővek</a></li>
+                <li><a href="#mc">Makszutov-Cassegrain távcsővek</a></li>
+            </ul>
+        </ul>
+    </aside>
+    <main>
+
+<section>
+        <h1>Csillagászati Távcsővek</h1>
+        <a href="swr607.html">
+    <article>
+        
+        <h3 id="m607">60/700 SkyWatcher Mercury-607</h3>
+        <img src="SWR607az2.jpg" alt="swr607">
+        <p>60/700 SkyWatcher Mercury-607 refraktor AZ2 mechanikán, 5x24 keresővel, 
+            20mm (35x) és 10mm (70x) Barium okulárokkal, zenittükörrel és terresztikus
+             képfordítóval
+        </p>
+    </article>
+        </a>
+        <a href="mercury705.html">
+    <article>
+        <h3 id="m705">SkyWatcher Mercury 705 - 70/500 AZ2</h3>
+        <img src="SWR705az2.jpg" alt="swr705">
+        <p>
+            70/500 SkyWatcher Mercury-705 refraktor AZ2 mechanikán, 6x24 keresővel, 
+            25mm (20x) és 10mm (50x) Barium okulárokkal,
+             egyszerű Barlow-val és zenittükörrel (SWR705az2)
+        </p>
+    </article>
+</a>
+<a href="skywatcerexp130p.html">
+    <article>
+        <h3 id="e130">SkyWatcher Explorer 130P EQ2</h3>
+        <img src="prod_17_bf36.jpg" alt="prod17">
+        <p>130/650 SkyWatcher Explorer-130P Newton EQ2 mechanikán. 
+            Díszdoboz, StarPointer, Barium25 (26x) és Barium10 (65x) okulár (SWN1306eq2)
+        </p>
+    </article>
+</a>
+<a href="explorer200.html">
+    <article>
+        <h3>SkyWatcher Explorer 200P Newton</h3>
+        <img src="prod_13_c26a.jpg" alt="prod13">
+        <p>
+            Ez a 200/1000 SkyWatcher Newton többféle mechanikán - 
+            a komoly kezdők és haladók főműszere, kiváló asztrofotós távcső is
+        </p>
+    </article>
+</a>
+<a href="maszutov90.html">
+    <article>
+        <h3 id="mc">90/1250 SkyWatcher Skymax-90 Makszutov-Cassegrain tubus</h3>
+        <img src="SWM90.jpg" alt="sem90">
+        <p>
+            90/1250 SkyWatcher Makszutov tubus. Felszereltség: Starpointer, fotoállványcsatlakozás, zenittükör, 
+            25 mm (50x) és 10 mm BA (125x) okulár
+        </p>
+    </article>
+</a>
+</section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#">Általános Szerződési Feltételek</a></li>
+            <li><a href="#">Kapcsolat</a></li>
+            <li><a href="#">Egyéb Információk</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

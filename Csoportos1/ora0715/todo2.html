@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. feladat: teendők</title>
+    <style>
+       
+        input,button {
+          
+            border-collapse:collapse;
+           
+            font-size: 1.1em;
+        }
+        .create-btn {
+            background-color: green;
+            color: azure;
+            margin-left: -5px;
+        }
+        .doing-item {
+            display: flex;
+            border: 1px solid blue;
+            background-color: blue;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 5px;
+            justify-content:space-between;
+            margin-top: 10px;
+            width: 300px;
+        }
+        .doing-item button {
+            background-color: red;
+        }
+        
+        .doingtext {
+            display: inline-block;
+
+            width: 150px;
+             align-self: center;
+        }
+        .done-item {
+            border: 1px solid green;
+            background-color:green;
+        }
+        .createbox {text-align: center;}
+        #doinglist {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="createbox">
+        <input type="text" id="doings">
+        <button type="button" class="create-btn" onclick="record()">Create</button>
+    </div>
+    <ul id="doinglist"></ul>
+
+
+        <script>
+            let todolist=[];
+            let lastId=0;
+           load();
+            function record()
+            {
+                const lists= document.getElementById("doinglist");
+                const createInput=document.getElementById("doings");
+                let value=createInput.value;
+                const list=createTodo(value,lastId);
+
+                const todo=settodo(createInput.value);
+                writeToJson(todo);
+                createInput.value="";
+                list.classList.add("doing-item");
+                lists.prepend(list);
+                
+            }
+
+            function createTodo(value,id)
+            {
+                const list=document.createElement("li");
+                const chbox=document.createElement("input")
+                chbox.type="checkbox";
+                const listtxt=document.createElement("div");
+                listtxt.innerText=value;      
+                listtxt.classList.add("doingtext");
+                const delbtn=document.createElement("button");
+                delbtn.value="del";
+                delbtn.type="button"
+                delbtn.innerText="Delete";
+                list.append(chbox,listtxt,delbtn);
+                list.setAttribute("id",id);
+                delbtn.addEventListener("click",(event)=>{
+                    const item=event.target.parentElement;
+                    let delindex=todolist.findIndex((ritem)=>ritem.id==item.id);
+                    todolist.splice(delindex,1);
+                    item.remove();
+                    deletetodo(item);
+                });
+                chbox.addEventListener("change",(event)=> {
+                    const done=event.target.parentElement;
+                    done.classList.toggle("done-item");
+                    let index=todolist.findIndex((ritem)=>ritem.id==done.id);
+                    todolist[index].status= todolist[done.id].status=="ready"? "notready":"ready";
+                    changestatus(done.id,todolist[index].status)
+                });
+                return list;
+            }
+
+                function settodo(text)
+            {
+                const todo={
+                    id:lastId,
+                    text:text,
+                    status:"notready",
+                };
+                
+                lastId++;
+                todolist.push(todo);
+                return todo;
+                //console.log(todolist);
+            }
+
+            function start()
+            {
+                const lists= document.getElementById("doinglist");
+                todolist.forEach((todo) => {
+                    let maxid=0;
+                    const list=createTodo(todo.text,todo.id);
+                    list.classList.add("doing-item");
+                    if (todo.id>maxid) maxid=todo.id;
+                    if(todo.status=="ready") {   
+                         list.classList.add("done-item");
+                    
+                        list.firstChild.checked=true;
+                    }
+                    lists.prepend(list);
+                    lastId=maxid;
+                });
+            }
+            async function load()
+            {
+                const resume=await fetch("http://localhost:3000/todo");
+                todolist = await resume.json();
+                //console.log(todolist);
+                start();
+            }
+            async function deletetodo(item)
+            {   
+                const url="http://localhost:3000/todo/"+item.id;
+                await fetch(url,
+                {method: "DELETE", headers:{"contend-type":"aplication/json"}});
+            }
+            async function  writeToJson(todo)
+            {
+                const text=todo.text;
+                const status=todo.status;
+                const bodytext=JSON.stringify({
+                        text:text,
+                        status:status,
+                        id:lastId,
+                        });
+                        console.log(bodytext);
+                const url="http://localhost:3000/todo";
+
+                let resume1=await fetch(url,{
+                    method:"POST",
+                    body:bodytext,
+                headers:{"Content-Type":"application/json"},
+                });
+                let answer=await resume1.json();
+                //console.log(answer);
+            }
+
+            async function changestatus(id,status)
+            {
+                const url="http://localhost:3000/todo/"+id;
+                let resume1=await fetch(url,{
+                    method:"PATCH",
+                    body:JSON.stringify({
+                        status:status,
+                }),
+                headers:{"Content-Type":"application/json"},
+                });
+            }
+        </script>
+    
+</body>
+</html>

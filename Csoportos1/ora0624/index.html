@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>függvény kifejezés</title>
+</head>
+<body>
+    <script>
+        const numbers = [10, 8.7, 11, 104, 7.7, 10, 43.1, 88.8];
+        const doubleNums= numbers.map((item) =>{return item*2;});
+        console.log(doubleNums);
+
+        const intNums=numbers.filter((item)=>{return Math.round(item)==item;});
+        console.log (intNums);
+
+        const div52=numbers.find((item) =>{return item%52==0;});
+        console.log(div52);
+
+        const summa=numbers.reduce((sum,item)=>{return sum+=item;});
+        console.log(summa);
+
+        const maxNumber=numbers.reduce((max,item)=>{
+            if(item>max)
+            {max=item;}
+            return max;
+         });
+         const minNumber=numbers.reduce((min,item)=>{
+            if(min>item)
+            {min=item;}
+            return min;
+         });
+         console.log("maximum: ",maxNumber,"; minimun:",minNumber);
+
+         const prim=intNums.find((item)=>{
+            if (item==2) return true;
+            if (item%2==0) return false;
+            for (let i=3;i<item; i+=2) {
+                if(item/i==0) return false;
+            }
+            return true;
+         });
+         console.log(prim);
+
+    </script>
+</body>
+</html>

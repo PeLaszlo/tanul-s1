@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 5</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 7fr 2fr;
+            grid-template-areas: "fejlec fejlec fejlec"
+            "fo1 fo2 fo3"
+            "lablec lablec lablec";
+            column-gap: 5px;     
+        }
+        header,footer,div {border: 1px solid gray;}
+        header, footer {
+            height: 2cm;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        header {
+            grid-area: fejlec;
+            background-color: red;
+            padding-top: 10px;
+        }
+        footer {
+            grid-area: lablec;
+            background-color: greenyellow;
+        }
+        .first {
+            text-align: center;
+        }
+        
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <div class="first">
+            m1 <br>m2 <br>m3 <br> m4
+        </div>
+        <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, commodi, 
+            illo qui rem quas a cupiditate dolores aliquid modi itaque ab exercitationem 
+            perferendis quibusdam! Repellendus aperiam eos culpa! Quasi, corporis.
+        </div>
+        <div class="eend">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eos nam assumenda
+             ducimus enim aliquam consequatur beatae, inventore magni quos at expedita asperiores,
+             exercitationem voluptatem minima earum cumque consequuntur rerum!
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

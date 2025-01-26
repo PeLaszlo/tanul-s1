@@ -1,0 +1,6 @@
+npm create vite@latest .
+npm i
+npm i react-router-dom axios formik yup jwt-decode
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm run dev

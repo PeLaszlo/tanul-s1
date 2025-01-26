@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    header {
+        background-color: darkslategrey;
+        color: aliceblue;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+     header h1 {text-align: center;
+    width: 100%;}
+     header nav ul a li{ text-decoration: none;
+    color:aliceblue;
+    margin: 10px;
+    
+    }
+     header nav ul {list-style: none;}
+    header h1::before {content: "Mobil ";}
+
+    main {text-align: center;}  
+
+@media screen and (min-width:700px)  {
+    header h1::before {content: "PC ";}
+    header nav ul a li {display: inline;}
+}
+@media screen and (min-width:1000px) {
+    header h1::before {content: " Bigger PC ";}
+    header {justify-content: flex-end;}
+}
+@
+    </style>
+</head>
+<body>
+    <header>
+        <h1>view look!</h1>
+        <nav>
+            <ul>
+                <a href=""><li>kezdőlap</li></a>
+                <a href=""><li>szolgáltatások</li></a>
+                <a href=""><li>rolunk</li></a>
+                <a href=""><li>kapcsolat</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Üdvözöljük!</h1>
+        <p>Ez egy példa a progresszív weboldalra.</p>
+    </main>
+</body>
+</html>

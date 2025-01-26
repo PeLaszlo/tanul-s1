@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. feladat</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+             Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        main {
+            display: flex;
+        }
+        .heading h1 {
+            font-size:36px;
+            font-weight: 700;
+        }
+        .heading {
+            font-size: 16px;
+            width: 50%;
+           
+        }
+        .heading button, #submit {
+            background-color: rgb(79, 70, 229);
+            padding: 16px 50px 16px 50px;
+            border: 1px solid rgb(79, 70, 229);
+            border-radius: 5px;
+        } 
+        .heading button:hover , #submit:hover {
+            background-color: rgb(67, 56, 202);
+            scale: 1;
+            transition-duration: 0.5s ;
+        }
+        @media screen and (max-width:1138px){
+            .heading {
+                width: 75%;
+            }
+            main {
+                flex-direction: column;
+            }
+
+        }
+        .gcontanier {
+            display: grid;
+            gap: 16px;
+        }
+        @media screen and (min-width:600px) {
+            .gcontanier {
+                grid-template-columns: minmax(120px, 176px) minmax(120px, 176px) minmax(120px, 176px);
+                grid-template-rows: 165px 165px;
+            }
+        }
+    
+        @media screen and (max-width:599px) {
+            .gcontanier {
+                grid-template-columns: minmax(120px, 176px) minmax(120px, 176px);
+                grid-template-rows: 165px 165px 165px;
+            }
+        }
+        .card {
+            border: 1px solid rgb(243, 244, 246);
+            border-radius: 12px;         
+            padding: 16px;
+        }
+        .card img {
+            width: 26px;
+            height: 26px;           
+        }
+        .card div {
+            width: 40px;
+            height: 40px;
+            background-color:  rgb(249, 250, 251);
+            text-align: center; 
+            padding-top: 10px;
+        }
+        .card h2 {margin: 0px;}
+        .card:hover {
+            background-color:  rgb(229, 231, 235);
+        }
+        footer {
+            margin:32px auto 0 auto;
+            color:  rgb(107, 114, 128);
+            max-width: 512px;
+        }
+        footer form input {
+            
+            border: 1px solid rgb(229, 231, 235);
+            border-radius: 8px;
+            padding: 16px;
+            min-width: 352px;
+            max-width: 448px;
+        }
+        footer h1 {
+            font-size: 30px;
+        }
+        .botton {
+            display: flex;
+            width: minmax(352px, 448px);
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: minmax(352px, 448px);
+            justify-content: center;
+           
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <div class="heading">
+        <h1>The Final Test</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus eligendi cupiditate cumque voluptas vitae numquam, ab nesciunt sit consequatur! 
+            Ratione recusandae ipsam laudantium a voluptatibus dolores sit id numquam quisquam.
+        </p>
+        <button>Give me 5-ös</button>
+    </div>
+    <div class="gcontanier">
+        <div class="card">
+            <div>
+              <img src="cap.svg" alt="cap">
+           </div>
+            <h2>progmatic</h2>
+            <p>
+                Lorem ipsum, dolor sit amet. 
+            </p>
+        </div>
+        <div class="card">
+            <div>
+              <img src="cap.svg" alt="cap">
+           </div>
+            <h2>progmatic</h2>
+            <p>
+                Lorem ipsum, dolor sit amet. 
+            </p>
+        </div>
+        <div class="card">
+            <div>
+              <img src="cap.svg" alt="cap">
+           </div>
+            <h2>progmatic</h2>
+            <p>
+                Lorem ipsum, dolor sit amet. 
+            </p>
+        </div>
+        <div class="card">
+            <div>
+              <img src="cap.svg" alt="cap">
+           </div>
+            <h2>progmatic</h2>
+            <p>
+                Lorem ipsum, dolor sit amet. 
+            </p>
+        </div>
+        <div class="card">
+            <div>
+              <img src="cap.svg" alt="cap">
+           </div>
+            <h2>progmatic</h2>
+            <p>
+                Lorem ipsum, dolor sit amet. 
+            </p>
+        </div>
+        <div class="card">
+            <div>
+              <img src="cap.svg" alt="cap">
+           </div>
+            <h2>progmatic</h2>
+            <p>
+                Lorem ipsum, dolor sit amet. 
+            </p>
+        </div>
+    </div>  
+</main>
+<footer>
+    <h1>Get Started Today</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem quo odit eligendi tenetur corporis repudiandae eius. Sequi quibusdam placeat sint maxime accusamus eaque magni. 
+        Voluptas obcaecati corporis ipsum molestias cupiditate.
+    </p>
+    <form action="">
+        <input type="text" name="email id=email" placeholder="Enter email">
+        <br>
+        <input type="password" name="password" id="paswoer" placeholder="enter password">
+        <div class="botton">
+            <span>No account? <a href="">sign up</a></span>
+            <button type="submit" name="signin"  id="submit"> Sign in</button>
+    </div>
+    </form>
+</footer>
+</body>
+</html>

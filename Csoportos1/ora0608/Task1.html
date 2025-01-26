@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. feladatsor</title>
+</head>
+<body>
+    <script>
+        // 1.feladat
+        function getnumbers (piece) {
+            const numbers=[];
+            for(let i=0;i<piece;i++) {
+                do { 
+                    numbers[i]=Number(prompt("kérem a számot"));
+                } while (isNaN(numbers[i])) 
+                }
+                return numbers;
+            }
+        function concatnumber() {
+            const numbers1=getnumbers(4);
+            let text="";
+            for(let i=0;i<numbers1.length;i++) {
+                text+=numbers1[i];
+                if(i<numbers1.length-1) {text+="-";}
+            }
+            console.log("teljes telefonszám: ",text);
+        }
+        //concatnumber();
+
+        // 2. feladat
+        function countwowel(text) {
+            let count=0;
+            const vowels=["a","á","e","é","i","í","ö","ő","o","ó","u","ú","ü","ű"];
+            for (i=0;i<text.length;i++) {
+                for(j=0;j<vowels.length;j++) {
+                   if( text[i]==vowels[j] ) {count++;}
+                }   
+            }
+            return count;
+        }
+       // console.log("A magánhangzók száma: ",countwowel(prompt("kérem a szöveget:")));
+       
+        // 3 feladat
+        function relacechar (text,oldchar,newchar) {
+            let i=0;
+            let txt="";
+            
+            for( i=0;i<text.length;i++) {
+                if(text[i]==oldchar) {
+                    txt+=newchar;
+                }
+                else txt+=text[i];
+            }
+            return txt;
+        }
+        const text2=relacechar("ez az eredeti szöveg","e","i");
+        console.log("betűcserélt szó: ",text2 );
+
+        // 4. feladat
+        function pure(oldarray){
+            const newarray=[];
+            for (let i=0;i<oldarray.length; i++) {
+                console.log(newarray.indexOf(oldarray[i]));
+                if(newarray.indexOf(oldarray[i])==-1) {
+                    newarray.push(oldarray[i]);
+                }
+            }
+            return newarray;
+        }
+        console.log("tisztított:",pure([1,3,2,3,2,4,5,6]));
+
+        // 5. feladat
+        function pure2(array) {
+            newarray=[];
+            for(let i=0;i<array.length;i++ ) {
+                if(array[i] || array[i]===0) {
+                    newarray.push(array[i]);
+                }
+            }
+            return newarray;
+        }
+        console.log ("megtisztított tömb2: ",pure2([1,"",2,null,"text",0,"r"]))
+
+        // 6. feladat
+        function arraytoobject(array) {
+            let res={};
+            for (let i=0; i<array.length;i++) {
+                res[array[i][0]]=array[i][1];
+            }
+            return res;
+        }
+        console.log("objekt", arraytoobject([["a",2],["b",3],["c",4]]));
+
+        // 7. feladat
+        function isequal (array1,array2) {
+            if(array1.length!=array2.length) 
+            {
+                return false;
+            }
+            let equal=true;
+            for(let i=0; i<array1.length;i++) {
+                if (array1[i]!=array2[i]) {
+                    equal=false; 
+                    break;
+                }
+            }
+            return equal;
+        }
+        firstarray=[1,3,5];
+        secondarray=[1,3,5];
+        thirdarray=[1,2,3];
+        console.log("Tömbök összehasonlítása 1: ",isequal(firstarray,secondarray));
+        console.log("Tömbök összehasonlítása 2: ",isequal(firstarray,thirdarray));
+
+        // 8.feladat
+        let users=[
+            {
+                name:"Kovács Áron",
+                age:23,
+                email:"koaron@freemail.hu",
+                loginname: "koaron",
+                password:"123456",
+                adualt:true,
+            },
+            {
+                name:"Szabó Tamás",
+                age:32,
+                email:"szabo.tamas@freemail.hu",
+                loginname: "tamasszabo",
+                password:"qwerty",
+                adualt:true,
+            },
+            {
+                name:"Nagy Ákos",
+                age:41,
+                email:"nagyakos@gmail.com",
+                loginname: "akoska",
+                password:"e4r5t2",
+                adualt:true,
+            },
+            {
+                name:"kiss Ágnes",
+                age:16,
+                email:"agnes.kiss@freemail.hu",
+                loginname: "agi16",
+                password:"E4g5zut",
+                adualt:false,
+            },
+        ]
+            function isadult(arr) {
+                let count=0;
+                for(let i=0;i<arr.length;i++) {
+                    if (arr[i].adualt) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+            console.log("A felnőttek száma: ",isadult(users));
+            function fillgmail(arr) {
+                let array=[];
+                for(let i=0;i<arr.length;i++) {
+                    let email1= arr[i].email;
+                    if (email1.indexOf("gmail.com")!=-1) {
+                        array.push(arr[i]);
+                    }
+                }
+                return array;
+            }
+            console.log("a gmail címes felhasználók: ",fillgmail(users));
+
+            // 8.5 feladat
+            function youngest(arr) {
+                if (arr.length==0) {return undefined;}
+                let youngest=arr[0].age;
+                let name=arr[0].name;
+                for(let i=0;i<arr.length;i++) {
+                    if (arr[i].age<youngest) {
+                        youngest=arr[i].age;
+                        name=arr[i].name;
+                    }
+                }
+                return name;
+            }
+            console.log("A legfiatalabb user neve: ",youngest(users));
+           
+            //8.6 feladat 
+
+            function earseuser (arr,mail) {
+                let earseduser=undefined;
+                for(let i=0; i<arr.length;i++) {
+                    if (arr[i].email==mail) {
+                        earseduser=arr.splice(i,1);
+                    }
+                }
+                return earseduser;
+            }
+            const ersemail=prompt("kérem adja meg a örölni kívánt use e-mail címét ");
+            console.log(" kitöröltem: ",earseuser(users,ersemail));
+    </script> 
+</body>
+</html>

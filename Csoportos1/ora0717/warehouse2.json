@@ -1,0 +1,40 @@
+{
+    "warehouse": [
+        {
+            "id": 1,
+            "shelves": [
+                [
+                    { "category": "table", "name": "Asztallap", "amount": 10 },
+                    {
+                        "category": "cabinet",
+                        "name": "Szekrényajtó",
+                        "amount": 2
+                    },
+                    { "category": "flower", "name": "Virágföld", "amount": 7 }
+                ],
+                [
+                    { "category": "flower", "name": "Virág", "amount": 2 },
+                    { "category": "table", "name": "Asztalláb", "amount": 11 },
+                    {
+                        "category": "cabinet",
+                        "name": "Szekrényfogantyú",
+                        "amount": 11
+                    },
+                    { "category": "table", "name": "Asztalfiók", "amount": 4 }
+                ],
+                [
+                    {
+                        "category": "flower",
+                        "name": "Virágcserép",
+                        "amount": 11
+                    },
+                    {
+                        "category": "cabinet",
+                        "name": "Szekrénypolc",
+                        "amount": 2
+                    }
+                ]
+            ]
+        }
+    ]
+}

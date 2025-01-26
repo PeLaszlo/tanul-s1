@@ -1,0 +1,29 @@
+{
+  "todo": [
+    {
+      "id": 0,
+      "text": "saját Json0",
+      "status": "notready"
+    },
+    {
+      "id": 1,
+      "text": "saját Json1",
+      "status": "ready"
+    },
+    {
+      "id": 2,
+      "text": "saját Json2",
+      "status": "ready"
+    },
+    {
+      "text": "ez ez új lesz",
+      "status": "notready",
+      "id": 3
+    },
+    {
+      "text": "piros",
+      "status": "notready",
+      "id": 4
+    }
+  ]
+}

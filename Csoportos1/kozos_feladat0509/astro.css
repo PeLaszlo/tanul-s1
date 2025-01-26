@@ -1,0 +1,17 @@
+h1 {text-align: center;
+border: 1px solid darkgray;
+border-radius: 10px;
+color: brown;
+background-color: antiquewhite;
+}
+.small {
+    font-size: small;
+    text-align: center;
+}
+.mainimg {
+    float: left;
+    max-width: 25%;
+    height: 25%;
+    margin: 10px;
+    border: 1px solid gray;
+}

@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../sql"
+		},
+		{
+			"name": "sql-modulzaro",
+			"path": "../SQL/sql-modulzaro"
+		}
+	],
+	"settings": {}
+}

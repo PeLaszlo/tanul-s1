@@ -1,0 +1,21 @@
+tömb metodusok
+fruits.slice(1,3) új tömbe menti a tömb egy részét. (start és véppopont között.
+arr1.concat(arr2); tömbök összefűzése. új tömbe.
+fruits.entries(); objektumot csinál a ömből. iterátue: érték pár szerint.
+fruits.fill("Kiwi", 2, 4); feltölti a tömböt az adot elemmel tól ig tartományban.
+fruits.includes("Banana", 3); elem keresése az a tömben a start poztól válasz true, false
+let index = fruits.indexOf("Apple"); a kereset elem indexe.
+let result = Array.isArray(fruits); tömbe-e true/false;
+let text = fruits.join(); szöveggé alakítjaa tömböt. (szeparátor megadható.
+let index = fruits.lastIndexOf("Apple"); háturol keresi az elemet a stringben. a tömb első elemét törli a tömbből. 
+fruits.shift(); a tömb első elemét törli a tömbből. 
+fruits.splice(2, 0, "Lemon", "Kiwi"); beszűr és töröl elemeket s tömből adott pozicióban.
+
+string kezelő
+metódusok
+let part = text.slice(7, 13); szövegrész kiemelése új stringbe
+let part = str.substring(7, 13); ua 13 hosszt  jelenti.
+text1.toUpperCase(); nagybetűs stringet készít.
+text1.toLowerCase(); kisbetűs stringet készít
+Hello".concat(" ", "World!"); string összefűzése elválasztóval.
+text.split("separator"); tömböt csinál a stringből.

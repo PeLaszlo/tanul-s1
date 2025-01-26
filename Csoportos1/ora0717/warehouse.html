@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>raktár</title>
+    <style>
+        .pieces {
+           border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .block {
+            width: fit-content;
+            height: 110px;
+            padding: 10px;
+        }
+
+        .greenblock { 
+            background-color: greenyellow;
+        }
+
+        .redblock{
+            background-color: red;
+        }
+
+        .blocklist {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: flex;
+            justify-content: space-around;
+        }
+        form h2 {text-align: center;}
+        form #amount {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="pieces" id="pieces">
+        </div>
+    </main>
+    <form>
+        <h2>Új alkatrész hozzáadása</h2>
+        A 
+        <input list="categorylist" name="category" id="category">
+        <datalist id="categorylist">
+            <option value="table">
+            <option value="cabinet">
+            <option value="flower">
+            </datalist>
+
+         kategóriába tartozó 
+        <input name="newItem" id="newItem" type="text"/>
+        nevű új alkatrészből 
+        <input type="number" name="amount" id="amount" min="1" value="1"/>&nbsp;db-ot a(z) 
+        <select name="shelf" id="self">
+            <option value="0">első </option>
+            <option value="1">második </option>
+            <option value="2">harmadik </option>
+        </select>
+        polcara helyezük.
+        <button type="button" onclick="setNewPiece()">Felvesz</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

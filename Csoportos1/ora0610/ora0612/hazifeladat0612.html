@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Házi feladat</title>
+</head>
+<body>
+    <script>
+        // 3. feladat. ----------------------------------------
+        const text="Készíts egy Függvényt, amely egy szövegben lévő szavak gyakoriságát számolja, és visszaadja egy tömbben, ahol minden elem egy objektum a szóval és a gyakorisággal. Mindegy, hogy egy szó kis- vagy nagybetűvel kezdődik, a kettő ugyanannak a szónak számít."
+        
+        function countWordInText(text)
+        {
+        const wordsInText=text.split(" ");
+        let wordobj={};
+
+        for(let i=0;i<wordsInText.length;i++)
+        {
+            let lowcaseword=wordsInText[i].toLowerCase();
+            wordobj[lowcaseword] = (wordobj[lowcaseword] || 0) +1;
+        }
+        
+       let temparray=Object.keys(wordobj);
+       let wordfreq=[];
+       for(i=0;i<temparray.length;i++)
+       {
+        let word1=temparray[i];
+        let word={[word1]:wordobj[word1] }
+        wordfreq.push(word);
+       }
+       return  wordfreq;
+        }
+    console.log(countWordInText(text));
+    // 4. feladat -------------------------------------------
+    function findRandom()
+    {
+        const rand=Math.floor(Math.random()*100)+1;
+        let tip;
+        do {
+        do {
+            tip=Number(prompt("kérem adja meg a tipjét:"));
+        } while (isNaN(tip));
+        if (tip<rand) {alert("A szám nagobb");}
+        else if (tip>rand) {alert("A szám kisebb");}
+        else alert("eltaláltad");
+        } while (tip!=rand);
+    }
+    //findRandom();
+    // 5. feladat ----------------------------
+    function classified(name,grade) 
+    {
+        let answer;
+        
+        if (grade.length)
+        {
+            let avg=0;
+            for (let i = 0; i< grade.length; i++) {
+                avg+=grade[i];           
+        }
+        avg/=grade.length;
+       
+        if (avg>4.5) {answer="kiváló";}
+        else if (avg>4) {answer="jó";}
+        else if (avg>3) {answer="közepes";}
+        else if(avg>2)  {answer="elégsées";}
+        else {answer="elégtelen";}
+    }
+    return answer;
+    }
+    console.log(classified("józsi",[4,5,5,4,5,3,4]));
+    // 6. feladat -------------------------------
+    function getBruttoPrice(nettoPrice)
+    {
+        return nettoPrice+=nettoPrice*0.27;
+    }
+    const products=[
+    {
+        productname:"kifli",
+        netto:100
+    },
+    {
+        productname:"kenyér",
+        netto:600,
+    },
+    {
+        productname:"tej",
+        netto:230
+    }
+    ];
+    for(let i=0;i<products.length;i++)
+    {
+        products[i].brutto=getBruttoPrice(products[i].netto);
+    }
+    console.log(products);
+    // 7. feladat ------------------
+    const pasword="jelszó";
+    let answer;
+    do {
+        answer=prompt("Kéram adja meg a jelszót");
+         (answer!=pasword) ? alert("próbált újra") : alert("sikerült");
+    } while(answer!=pasword);
+
+    // 8 feladat --------------------------
+    const basket =[
+        {
+        name:"óra",
+        quantity:2
+    },
+    {
+        name:"Tv",
+        quantity:1
+    },
+    {
+        name:"könyv",
+        quantity:6
+    }
+]
+function insertelement(product)
+{
+    if (product.name)
+    {
+        basket.push(product)
+    }
+}
+function deleteelement(name)
+{
+    let index=-1;
+    for(i=0;i<basket.length;i++)
+    {
+        if (basket[i].name==name) {
+            index=i;
+            break;
+        }
+    }
+  
+    if(index!=-1)
+    {
+        return (basket.splice(index,1));
+    }
+}
+function printBasket()
+{
+    for(i=0;i<basket.length;i++)
+    {
+        console.log("termék: ",basket[i].quantity," db ",basket[i].name);
+    }
+}
+insertelement({name:"póló",quantity:10});
+console.log(basket);
+deleteelement("Tv");
+printBasket();
+    </script>
+</body>
+</html>
